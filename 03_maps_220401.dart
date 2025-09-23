@@ -1,31 +1,14 @@
 void main() {
   final Map<String, dynamic> pokemon = {
     'name': 'Jirachi',
-    'hp': 100,
-    'isAlive': true,
-    'abilities': <String>['impostor'],
-    'sprites': {
-      'front': 'Jirachi/front.png',
-      'back': 'Jirachi/back.png',
-    },
-    'tipo': 'Acero / Psíquico',
-  };
-
-  print(pokemon);
-  print('Name: ${pokemon['name']}');
-  print('Sprites: ${pokemon['sprites'][2]}');
-}
-void main() {
-  final Map<String, dynamic> pokemon = {
-    'name': 'Jirachi',
     'hp': 120,
     'isAlive': true,
     'abilities': {1: "Deseo Oculto", 2: "Masa Cosmica", 3: "Premonicion"},
     'sprites': <String>[
       "images/Jirachi/frontal_pose.png",
-      "images/Jirachi/back_pose.png"
+      "images/Jirachi/back_pose.png",
     ],
-    'winRate': 0
+    'winRate': 0,
   };
 
   print(pokemon);
@@ -44,12 +27,16 @@ Habilidades:     Tipo de dato: ${pokemon['abilities'].runtimeType}
   // Buffer para las habilidades
   final abilitiesBuffer = StringBuffer();
   (pokemon['abilities'] as Map<int, String>).forEach((key, value) {
-    abilitiesBuffer.writeln(" $key: $value     Tipo de Dato: ${value.runtimeType}");
+    abilitiesBuffer.writeln(
+      " $key: $value     Tipo de Dato: ${value.runtimeType}",
+    );
   });
   print(abilitiesBuffer.toString());
 
   // Buffer para las sprites
-  print("Imagenes (Sprites):     Tipo de dato: ${pokemon['sprites'].runtimeType}");
+  print(
+    "Imagenes (Sprites):     Tipo de dato: ${pokemon['sprites'].runtimeType}",
+  );
   final spritesBuffer = StringBuffer();
   (pokemon['sprites'] as List<String>).forEach((sprite) {
     spritesBuffer.writeln(" $sprite     Tipo de dato: ${sprite.runtimeType}");
